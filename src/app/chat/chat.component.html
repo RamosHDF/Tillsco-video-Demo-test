@@ -1,0 +1,23 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>
+    <p class="video-description"></p>
+    <video #local_video [autoplay]="true" [muted]="true"></video>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <p class="video-description" *ngIf="inCall">Request sent to Tillsco users </p>
+    <video #received_video [autoplay]="true"></video>
+  </mat-grid-tile>
+</mat-grid-list>
+<div class="container center">
+
+<button mat-raised-button color="accent" (click)="startLocalVideo()" [disabled]="localVideoActive" *ngIf="!inCall || !localVideoActive">Start Local</button>
+<button mat-raised-button color="accent" (click)="pauseLocalVideo()" [disabled]="!localVideoActive">Stop Local</button>
+<button mat-fab mat-raised-button style="background-color: rgb(63, 177, 63);" (click)="call()" [disabled]="inCall || !localVideoActive" >
+  <mat-icon style="color: honeydew;" >call</mat-icon>
+</button>
+<button mat-fab color="warn" class="btn" (click)="hangUp()" [disabled]="!inCall">
+  <mat-icon>
+    call_end
+    </mat-icon>
+</button>
+</div>

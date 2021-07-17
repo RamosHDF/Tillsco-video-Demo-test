@@ -1,0 +1,17 @@
+video {
+  width: 100%;
+  background: rgb(36, 31, 31);
+}
+
+p.video-description {
+  position: absolute;
+  top: 20px;
+  left: 200px;
+}
+
+button {
+  margin: 1em;
+}
+
+.material-icons.color_green { color: #00FF00; }
+
